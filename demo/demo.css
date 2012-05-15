@@ -1,0 +1,26 @@
+BODY {
+	background: #CCC;
+	font: normal bold 16px/16px helvetica,arial,sans-serif;
+}
+
+DIV#demo {
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+
+LI.item {
+	float: left;
+	width: 90px;
+	height: 90px;
+	margin: 4px;
+	border: 1px solid #333;
+}
+
+LI.item p {
+	position: relative;
+	top: -88px;
+	left: 2px;
+	color: #F00;
+}
