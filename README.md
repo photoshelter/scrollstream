@@ -34,54 +34,62 @@ Usage
 
 2. Make a new ScrollStream object on an empty `div`, setting any options (a full list is below):
 
-        var $div = $('#foo'); // suppose your div has an id foo
-        
-        var scroll = $div.scrollStream({
-            context: function() {
-                return $someScrollable;
-            },
-            loading: function() {
-                var src = '/path/to/busy-spinner.gif';
-                return '<div class="busy"><img src="' + src + '" /></div>';
-            },
-            classes: {
-                ol: 'bar baz qux',
-                li: 'someItemClass' // this is the CSS class you created above
-            }
-        }).data('scrollStream');
+    ```javascript
+    var $div = $('#foo'); // suppose your div has an id foo
+    
+    var scroll = $div.scrollStream({
+        context: function() {
+            return $someScrollable;
+        },
+        loading: function() {
+            var src = '/path/to/busy-spinner.gif';
+            return '<div class="busy"><img src="' + src + '" /></div>';
+        },
+        classes: {
+            ol: 'bar baz qux',
+            li: 'someItemClass' // this is the CSS class you created above
+        }
+    }).data('scrollStream');
+    ```
 
 3. Handle the plugin's requests for paged data by binding to the `div`:
 
-        $div.on('req.scrollstream', function(event, data) {
-            someFetchFunction(data.start, data.size);
-        });
+    ```javascript
+    $div.on('req.scrollstream', function(event, data) {
+        someFetchFunction(data.start, data.size);
+    });
+    ```
 
 4. You can return data immediately, or respond via event when any async work is done:
 
-        function someFetchFunction(start, size) {
-            // generate an array of items' HTML contents
-            
-            // optionally, make an array of key-value pairs to add with $.data()
-            // and/or an array of CSS classes that will be added to each item
-            
-            $div.trigger('resp.scrollstream', {
-                start: someOffsetNumber,
-                liHtml: someArrayOfHtmlContents,
-                // liData: someArrayOfDataObjects,
-                // liClass: someArrayOfClassStrings
-            });
-        }
+    ```javascript
+    function someFetchFunction(start, size) {
+        // generate an array of items' HTML contents
+        
+        // optionally, make an array of key-value pairs to add with $.data()
+        // and/or an array of CSS classes that will be added to each item
+        
+        $div.trigger('resp.scrollstream', {
+            start: someOffsetNumber,
+            liHtml: someArrayOfHtmlContents,
+            // liData: someArrayOfDataObjects,
+            // liClass: someArrayOfClassStrings
+        });
+    }
+    ```
 
 5. Finally, initialize the plugin and supply it with info about your items:
 
-        scroll.init({
-            buffer: someBufferNumber,
-            item: {
-                count: someHugeNumberOfItems,
-                height: someHeight,
-                width: someWidth
-            }
-        });
+    ```javascript
+    scroll.init({
+        buffer: someBufferNumber,
+        item: {
+            count: someHugeNumberOfItems,
+            height: someHeight,
+            width: someWidth
+        }
+    });
+    ```
 
 6. Now load your page and scroll!
 
