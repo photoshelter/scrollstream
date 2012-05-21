@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-scrollstream.jquery.js (v1.0.0)
+scrollstream.jquery.js (v1.0.1)
 https://github.com/photoshelter/scrollstream
 
 Copyright 2012 PhotoShelter, Inc.
@@ -191,8 +191,8 @@ ScrollStream.prototype = {
                 for (var i = 0; i < that.respQ.length; i++) {
                     var resp = that.respQ[i];
 
-                    if (req.start === resp.start
-                        && req.size === resp.liHtml.length) { // req/resp pair
+                    if (req.start === resp.start &&
+                        req.size === resp.liHtml.length) { // req/resp pair
                             that.reqQ.shift();
                             that.respQ.splice(i, 1);
                             that._handleResp(req, resp);
@@ -345,7 +345,7 @@ ScrollStream.prototype = {
         this.jq.$block.children().each(function(i) {
             if (i === 0) {
                 offset = parseInt($(this).attr('id')
-                    .split(that.opts.name + '-id-')[1]);
+                    .split(that.opts.name + '-id-')[1], 10);
             }
             placeholders.push($(this.firstChild)
                 .hasClass(that.opts.name + '-loading'));
@@ -358,7 +358,7 @@ ScrollStream.prototype = {
 
             var d = {
                 start: offset + runs[i].start,
-                size: runs[i].count,
+                size: runs[i].count
             };
 
             this.reqQ.push(d);
@@ -419,7 +419,7 @@ ScrollStream.prototype = {
 
             var c = this.opts.classes.li;
             var li = c ? '<li id="' + id + '" class="' + c + '">' :
-                '<li id="' + id + '">'
+                '<li id="' + id + '">';
             li += marker + loading + '</li>';
 
             html += li;
