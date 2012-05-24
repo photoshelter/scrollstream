@@ -188,7 +188,7 @@ ScrollStream.prototype = {
                 var matched = false;
 
                 // async means cannot guarantee respQ[0] is response for reqQ[0]
-                for (var i = 0; i < that.respQ.length; i++) {
+                for (var i = 0, l = that.respQ.length; i < l; i++) {
                     var resp = that.respQ[i];
 
                     if (req.start === resp.start &&
@@ -353,7 +353,7 @@ ScrollStream.prototype = {
 
         // load runs of placeholders
         var runs = this._findRuns(placeholders);
-        for (var i = 0; i < runs.length; i++) {
+        for (var i = 0, l = runs.length; i < l; i++) {
             if (runs[i].value !== true) continue;
 
             var d = {
@@ -370,7 +370,7 @@ ScrollStream.prototype = {
         var segments = [];
 
         var start, count, last;
-        for (var i = 0; i < a.length; i++) {
+        for (var i = 0, l = a.length; i < l; i++) {
             if (i === 0) {
                 start = 0;
                 count = 1;
@@ -414,7 +414,7 @@ ScrollStream.prototype = {
             this.opts.loading() : '';
 
         var html = '';
-        for (var i = 0; i < req.size; i++) {
+        for (var i = 0, l = req.size; i < l; i++) {
             var id = this.opts.name + '-id-' + (req.start + i);
 
             var c = this.opts.classes.li;
