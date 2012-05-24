@@ -1,16 +1,16 @@
-BODY {
+body {
 	background: #CCC;
 	font: normal bold 16px/16px helvetica,arial,sans-serif;
 }
 
-DIV#demo {
+div#demo {
 	width: 600px;
 	height: 100%;
 	margin: 0 auto;
 	background-color: #FFF;
 }
 
-LI.item {
+li.item {
 	float: left;
 	width: 90px;
 	height: 90px;
@@ -18,7 +18,7 @@ LI.item {
 	border: 1px solid #333;
 }
 
-LI.item p {
+li.item p {
 	position: relative;
 	top: -88px;
 	left: 2px;
