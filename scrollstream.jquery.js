@@ -1,6 +1,6 @@
 /*******************************************************************************
 
-scrollstream.jquery.js (v1.0.1)
+scrollstream.jquery.js (v1.0.2)
 https://github.com/photoshelter/scrollstream
 
 Copyright 2012 PhotoShelter, Inc.
