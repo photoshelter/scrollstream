@@ -103,7 +103,7 @@ Configuration
 Optional parameters the plugin accepts when it's instantiated:
 
 | **Option**        | **Description**                                                                | **Default Value**      |
-|------------------:|:------------------------------------------------------------------------------:|:-----------------------|
+|:------------------|:-------------------------------------------------------------------------------|:-----------------------|
 | `name`            | Prefix used on IDs of DOM elements the plugin creates.                         | `'scrollstream'`       |
 | `context`         | Function returning a jQuery object to which `scroll` listener will be bound.   | `window`               |
 | `debug`           | Print rendering changes applied on each `scroll` event.                        | `false`                |
@@ -121,7 +121,7 @@ Optional parameters the plugin accepts when it's instantiated:
 Parameters that `init` requires (all are of type `number`):
 
 | **Parameter** | **Description**                                                                       |
-| -------------:|:--------------------------------------------------------------------------------------|
+| :-------------|:--------------------------------------------------------------------------------------|
 | `buffer`      | Rows to add before and after the viewable area.                                       |
 | `item.count`  | Total count of items to be rendered.                                                  |
 | `item.height` | Height of a single item after CSS is applied (including padding, border, and margin). |
@@ -130,7 +130,7 @@ Parameters that `init` requires (all are of type `number`):
 Other external methods:
 
 | **Method**       | **Description**                                                            | **Return Type** |
-|-----------------:|:--------------------------------------------------------------------------:|:----------------|
+|:-----------------|:---------------------------------------------------------------------------|:----------------|
 | `getHeight`      | Height in pixels of the entire grid (includes all rows, viewable or not).  | `number`        |
 | `getItemsPerRow` | Number of items rendered per row.                                          | `number`        |
 | `resize`         | Recalculate constants. Can be bound to viewport resize event if needed.    | `undefined`     |
